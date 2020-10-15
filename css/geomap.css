@@ -1,0 +1,99 @@
+body {
+  background: black;
+}
+
+.cluster {
+  border-radius: 40px;
+
+  height: 5px;
+  margin: 15px;
+  width: 5px;
+
+  text-align: center;
+  padding-top: 7px;
+  font-size: 24px;
+  color: white;
+
+}
+.cluster-ok {
+  background: #2aa043;
+}
+.cluster-info {
+  background: #00bfff;
+}
+.cluster-warning {
+  background: #d16e0a;
+}
+.cluster-average {
+  background: #ff6800;
+}
+.cluster-high {
+  background: #eb6e63;
+}
+.cluster-disaster {
+  background: #6f001f;
+}
+
+
+.pin {
+  width: 30px;
+  height: 30px;
+  border-radius: 50% 50% 50% 0;
+  background: grey;
+  position: absolute;
+  transform: rotate(-45deg);
+  left: 50%;
+  top: 50%;
+  margin: -20px 0 0 -20px;
+}
+.pin:after {
+  content: "";
+  width: 14px;
+  height: 14px;
+  margin: 8px 0 0 8px;
+  background: #e6e6e6;
+  position: absolute;
+  border-radius: 50%;
+}
+
+.pulse {
+  background: #d6d4d4;
+  border-radius: 50%;
+  height: 14px;
+  width: 14px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: 11px 0px 0px -12px;
+  transform: rotateX(55deg);
+  z-index: -2;
+}
+.pulse:after {
+  content: "";
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  margin: -13px 0 0 -13px;
+  animation: pulsate 1s ease-out;
+  animation-iteration-count: infinite;
+  opacity: 0;
+  box-shadow: 0 0 1px 2px grey;
+  animation-delay: 1.1s;
+}
+
+@keyframes pulsate {
+  0% {
+    transform: scale(0.1, 0.1);
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1.2, 1.2);
+    opacity: 0;
+  }
+}
